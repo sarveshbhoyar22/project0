@@ -38,10 +38,13 @@ uploadBtn.addEventListener("click", async () => {
 
   uploadStatus.textContent = "Uploading...";
   try {
-    const res = await fetch(`http://localhost:5000/upload-context`, {
-      method: "POST",
-      body: formData,
-    });
+    const res = await fetch(
+      `https://quickref-3l6q.onrender.com/upload-context`,
+      {
+        method: "POST",
+        body: formData,
+      }
+    );
     const data = await res.json();
 
     if (data.success) {
@@ -68,7 +71,7 @@ askBtn.addEventListener("click", async () => {
   answerOutput.textContent = "Thinking...";
 
   try {
-    const res = await fetch("http://localhost:5000/query-gemini", {
+    const res = await fetch("https://quickref-3l6q.onrender.com/query-gemini", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ sessionId, question }),
