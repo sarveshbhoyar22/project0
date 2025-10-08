@@ -1,0 +1,119 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>QuickRef AI</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="light">
+  <div class="background-decoration">
+    <div class="decoration-circle circle-1"></div>
+    <div class="decoration-circle circle-2"></div>
+    <div class="decoration-circle circle-3"></div>
+  </div>
+
+  <header>
+    <div class="header-content">
+      <div class="logo-section">
+        <div class="logo-icon">
+          <svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" fill="currentColor" opacity="0.2" />
+            <path d="M16 4L28 10V22L16 28L4 22V10L16 4Z" stroke="currentColor" stroke-width="2"
+              stroke-linejoin="round" />
+            <circle cx="16" cy="16" r="4" fill="currentColor" />
+          </svg>
+        </div>
+        <h1>QuickRef AI</h1>
+      </div>
+      <button id="themeToggle" class="theme-toggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+      <section id="upload-section" class="card upload-card">
+        <div class="card-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+        </div>
+        <h2>Upload Your Data</h2>
+        <p class="card-description">Upload Excel or CSV files to get started with AI-powered insights</p>
+
+        <div class="upload-zone">
+          <input type="file" id="fileInput" accept=".xlsx,.xls,.csv" />
+          <label for="fileInput" class="upload-label">
+            <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+              stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+              <polyline points="17 8 12 3 7 8"></polyline>
+              <line x1="12" y1="3" x2="12" y2="15"></line>
+            </svg>
+            <span class="upload-text">
+              <strong>Click to upload</strong> or drag and drop
+            </span>
+            <span class="upload-hint">Excel (.xlsx, .xls) or CSV files</span>
+          </label>
+        </div>
+
+        <button id="uploadBtn" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+            <polyline points="17 8 12 3 7 8"></polyline>
+            <line x1="12" y1="3" x2="12" y2="15"></line>
+          </svg>
+          Upload File
+        </button>
+        <p id="uploadStatus" class="status-message"></p>
+      </section>
+
+      <section id="query-section" class="card query-card" style="display:none;">
+        <div class="card-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+            <line x1="9" y1="10" x2="15" y2="10"></line>
+            <line x1="12" y1="7" x2="12" y2="13"></line>
+          </svg>
+        </div>
+        <h2>Ask Your Question</h2>
+        <p class="card-description">Get instant AI-powered answers from your data</p>
+
+        <div class="input-group">
+          <textarea id="questionInput" placeholder="What insights would you like to discover from your data?"
+            rows="4"></textarea>
+        </div>
+
+        <button id="askBtn" class="btn btn-primary">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+            stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="5 3 19 12 5 21 5 3"></polygon>
+          </svg>
+          Ask AI
+        </button>
+
+        <div id="answerOutput" class="answer-output"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <p>Powered by AI • QuickRef AI © 2025</p>
+  </footer>
+  
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="script.js"></script>
+</body>
+
+</html>
