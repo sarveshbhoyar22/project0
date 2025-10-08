@@ -19,8 +19,19 @@ const ai = new GoogleGenAI({
 
 
 const app = express();
+app.use(
+  cors({
+    origin: [
+      "http://localhost:5000", // local dev (optional)
+      "https://quickref10.onrender.com", // your deployed frontend
+    ],
+    methods: ["GET", "POST"],
+    credentials: true,
+  })
+);
 app.use(express.json());
 app.use(cors());
+
 
 const PORT = process.env.PORT || 5000;
 
